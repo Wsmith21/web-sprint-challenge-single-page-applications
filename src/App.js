@@ -167,17 +167,13 @@ function Pizza({ setShowPizzaForm }) {
             <h1>Bloomtech Eats</h1>
             <nav>
               <Link to="/">HomePage</Link>&nbsp;
+              <Link to="/pizza" id="order-pizza">Order Pizza</Link>
             </nav>
             <Routes>
               <Route path="/pizza" element={<Pizza />} />
             </Routes>
-            <nav>
-            <button id="order-pizza">
-            <Link to="/pizza" id="pizza">Order Pizza</Link>
-            </button>
-            </nav>
           </div>
         );
       }
       
-      export default App
+      export default App;
