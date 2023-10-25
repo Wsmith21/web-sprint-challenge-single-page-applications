@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
+const style = { margin: '1rem', padding: '1rem', border: '2px solid black'}
+
+
 
 
 
@@ -158,28 +162,21 @@ function PizzaForm({ setShowPizzaForm }) {
   );
       }
       function App() {
-        const [route, setRoute] = useState('home');
+        const [showPizzaForm, setShowPizzaForm] = useState(false);
       
         const handleOrderPizzaClick = () => {
-          setRoute('pizza');
+          setShowPizzaForm(true);
         };
       
         return (
-          <div>
-            {route === 'home' ? (
-              <div>
-                <h1>Bloomtech Eats</h1>
-                <button id="order-pizza" onClick={handleOrderPizzaClick}>
-                  order pizza
-                </button>
-              </div>
-            ) : (
-              <PizzaForm setShowPizzaForm={() => setRoute('home')} />
-            )}
-          </div>
-        );
-      }
+    <div>
+    <PizzaForm setShowPizzaForm={setShowPizzaForm} />
+    <h1>Bloomtech Eats</h1>
+    <button id="order-pizza" onClick={handleOrderPizzaClick}>
+        order pizza
+    </button>
+    </div>
+  );
+}
 
 export default App;
-
-
