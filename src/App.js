@@ -7,7 +7,7 @@ const style = { margin: '1rem', padding: '1rem', border: '2px solid black'}
 
 
 
-function PizzaForm({ setShowPizzaForm }) {
+function Pizza({ setShowPizzaForm }) {
   const [formData, setFormData] = useState({
     name: '',
     size: '',
@@ -169,11 +169,13 @@ function PizzaForm({ setShowPizzaForm }) {
               <Link to="/">HomePage</Link>&nbsp;
             </nav>
             <Routes>
-              <Route path="/pizza" element={<PizzaForm />} />
+              <Route path="/pizza" element={<Pizza />} />
             </Routes>
+            <nav>
             <button id="order-pizza">
-          <Link to="/pizza">Order Pizza</Link>
+            <Link to="/pizza" id="pizza">Order Pizza</Link>
             </button>
+            </nav>
           </div>
         );
       }
